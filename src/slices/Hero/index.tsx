@@ -52,8 +52,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         trigger: ".hero",
         start: "top top",
         end: "bottom bottom",
-        scrub: 1.5,
-        markers: true
+        scrub: 1.5
       }
     })
 
