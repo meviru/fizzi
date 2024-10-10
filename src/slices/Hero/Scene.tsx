@@ -57,11 +57,13 @@ export default function Scene({ }: Props) {
             }
         });
 
-        introTl
-            .from(can1GroupRef.current.position, { y: -5, x: 1 }, 0)
-            .from(can1GroupRef.current.rotation, { z: 3 }, 0)
-            .from(can2GroupRef.current.position, { y: 5, x: 1 }, 0)
-            .from(can2GroupRef.current.rotation, { z: 3 }, 0)
+        if (window.scrollY < 20) {
+            introTl
+                .from(can1GroupRef.current.position, { y: -5, x: 1 }, 0)
+                .from(can1GroupRef.current.rotation, { z: 3 }, 0)
+                .from(can2GroupRef.current.position, { y: 5, x: 1 }, 0)
+                .from(can2GroupRef.current.rotation, { z: 3 }, 0)
+        }
 
         const scrollTl = gsap.timeline({
             defaults: {
@@ -71,7 +73,7 @@ export default function Scene({ }: Props) {
                 trigger: '.hero',
                 start: 'top top',
                 end: 'bottom bottom',
-                scrub: 1.5
+                scrub: 1.5,
             }
         })
 
