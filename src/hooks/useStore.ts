@@ -5,7 +5,7 @@ interface State {
     isReady: () => void;
 }
 
-const useStore = create<State>((set) => ({
+export const useStore = create<State>((set) => ({
     ready: false,
     isReady: () => set({ ready: true }),
 }))
